@@ -1,7 +1,13 @@
 <!--
+ * @Date: 2021-12-12 17:37:00
+ * @LastEditors: MannixWu
+ * @LastEditTime: 2021-12-12 23:54:37
+ * @FilePath: \MannixWu.github.io\board.html
+-->
+<!--
  * @Author: MannixWu
  * @Date: 2021-12-10 21:22:27
- * @LastEditTime: 2021-12-12 20:59:13
+ * @LastEditTime: 2021-12-12 22:10:38
  * @LastEditors: MannixWu
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \MannixWu.github.io\board.html
@@ -63,28 +69,28 @@
 <body>
   <header>
     <div class="head">
-      <h1>Mannix's Site -- Messageboard</h1>
-      <img src="images/logo.jpg" alt="logo">
+      <h1 class="flipIn">Mannix's Site -- Home</h1>
+      <img class="flipIn" src="images/logo.jpg" alt="logo">
     </div>
 
     <nav class="nav">
       <ul>
-        <li><a href="./index.html">HomePage</a></li>
-        <li><a href="./picture.html">Picture</a></li>
-        <li><a href="./mywork.html">Work</a></li>
-        <li><a href="./board.html">Messageboard</a></li>
-        <li><a href="mailto:steveandjobs3068758340@gamil.com">EmailToMe</a></li>
+        <li><a class="flipIn" href="./index.html">HomePage</a></li>
+        <li><a class="flipIn" href="./picture.html">Picture</a></li>
+        <li><a class="flipIn" href="./mywork.html">Work</a></li>
+        <li><a class="flipIn" href="./board.html">Messageboard</a></li>
+        <li><a class="flipIn" href="mailto:steveandjobs3068758340@gamil.com">EmailToMe</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
 
-    <article>
+    <article class="flipIn">
       <ul class="msgbd">
-        <li><input type="text" id="name"></li>
-        <li><input type="text" id="memo"></li>
-        <li><input type="button" id="btn" title="nh" value="发送！" onclick="fun();"></li>
+        <li><input class="flipIn" type="text" id="name" placeholder="昵称"></li>
+        <li><input class="flipIn" type="text" id="memo" placeholder="留言内容"></li>
+        <li><input class="flipIn" type="button" id="btn" title="nh" value="发送！" onclick="fun();"></li>
       </ul>
     </article>
     <script>
