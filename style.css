@@ -1,0 +1,272 @@
+/* || 一般设置 */
+
+@font-face {
+  font-family: HYWH;
+  src: url(./fonts/HYWenHei-85W.ttf);
+}
+@font-face {
+  font-family: Zpix;
+  src: url(./fonts/Zpix.ttf);
+}
+html, body {
+  width: auto;
+  height: 100%;
+  margin: 0;
+  color: rgb(149 236 246);
+  font: zpix;
+  /* background: url(./images/p2.png) no-repeat center; */
+  background-size: cover;
+  background-attachment:fixed;
+}
+
+html {
+  font-size: 12px;
+  background-color: #a9a9a9;
+}
+
+body {
+  width: 70%;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+/* || 排版 */
+
+h1,h2, h3 {
+  font-family: zpix, cursive;
+  color: #ff5b92;
+}
+
+p, input, li {
+  font-family: zpix, sans-serif;
+  color: #6e6868;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgb(160, 140, 140);
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p, li {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* || 标题布局 */
+
+header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+main, header, nav, article, aside, footer, section {
+  background-color: #9ddee152;
+  padding: 1%;
+}
+
+h1 {
+  flex: 5;
+  /* text-transform: uppercase; */
+}
+
+
+nav {
+  margin-top: 8px;
+  height: 50px;
+  flex: 100%;
+  display: flex;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+nav a, nav span {
+  display: inline-block;
+  font-size: 2rem;
+  height: 3rem;
+  line-height: 1.7;
+  text-decoration: none;
+  color: black;
+}
+
+/* head */
+.head {
+  width: 100%;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+}
+.head h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-family: zpix, sans-serif;
+  color: #ff77a5;
+  text-shadow: 2px 2px 10px rgb(160, 140, 140);
+}
+.head img {
+  align-self: center;
+  height: 100%;
+  border-radius: 30%;
+}
+
+/* 导航栏 */
+
+.nav{
+  display: flex;
+  background-color: rgba(62, 231, 189, 0.342);
+  padding: 0%;
+}
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+}
+.nav li {
+  float: left;
+}
+.nav li a {
+  height: 100%;
+  font-family: zpix, sans-serif;
+  display: block;
+  color: rgb(191 133 193);
+  text-align: center;
+  padding: 10px 0px;
+  text-decoration: none;
+  transition-duration:.5s;
+}
+
+
+.nav li a:hover:not(.active) {
+  background-color: #F2FF00;
+  color:#000;
+}
+
+.nav li a.active {
+  color: white;
+  background-color: #3ED18C;
+}
+
+
+
+
+
+/* || 主体布局 */
+
+main {
+  display: flex;
+}
+
+article{
+  flex: 3;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
+  padding: 1%;
+}
+
+aside a {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+
+footer {
+  margin-top: 10px;
+}
+
+
+.box{
+  display:block;
+  color:#80FF00;
+  margin:2px;
+  overflow:hidden;
+  border-radius:10%;
+  transition-duration:.5s;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+}
+.box a{
+  width:100%;
+  color:#000;
+  text-decoration: none;
+}
+.box:hover{
+  transform:translate(0,-10px);
+  /* transform: matrix(0,0,0,0,0,0); */
+  box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.7);
+}
+.box img{
+  width:100%;
+  height:100%;
+}
+.parent {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.child{
+  width:50%;
+  display:flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+
+.social {
+   margin: 0;
+  font: 2em sans-serif;
+  display:flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+.social ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.social li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  background-size: contain;
+}
+.twitter{
+  background:url(./images/twitter.svg) no-repeat center;
+}
+.bilibili{
+  background:url(./images/bilibili-logo-blue.svg) no-repeat center;
+}
+
+.p5Canvas {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0%;
+}

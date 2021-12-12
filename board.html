@@ -1,0 +1,107 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-10 21:22:27
+ * @LastEditTime: 2021-12-12 12:09:30
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \assets\board.html
+-->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mannix's Site -- Messageboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Long+Cang|Noto+Sans+SC:300" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+
+  <style>
+    /* body {
+          padding: 0;
+          margin: 0;
+          z-index: 1;
+      } */
+
+
+    .msgbd {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      overflow: auto;
+    }
+
+    .msgbd li {
+      display: flex;
+      /* width: 100%; */
+      flex: 1;
+      text-decoration: none;
+    }
+
+    .msgbd input {
+      width: 100%;
+      flex: 1;
+      background-color: transparent;
+      font-size: 1em;
+      font-family: 'Noto Sans SC', sans-serif;
+      color: rgb(127, 22, 168);
+    }
+  </style>
+  <script src="./mySql.js"></script>
+  <script src="./p5/p5.js"></script>
+  <script src="./p5test.js"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+</head>
+
+<body>
+  <header>
+    <div class="head">
+      <h1>Mannix's Site -- Messageboard</h1>
+      <img src="images/logo.jpg" alt="logo">
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="./index.html">HomePage</a></li>
+        <li><a href="./picture.html">Picture</a></li>
+        <li><a href="./mywork.html">Work</a></li>
+        <li><a href="./board.html">Messageboard</a></li>
+        <li><a href="mailto:steveandjobs3068758340@gamil.com">EmailToMe</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <article>
+      <ul class="msgbd">
+        <li><input type="text" id="name"></li>
+        <li><input type="text" id="memo"></li>
+        <li><input type="button" id="btn" onclick="fun();"></li>
+      </ul>
+      <!-- <iframe src="./webSQL.html" scrolling="auto" style="width:100%;min-height:700px;border: 0px;"> -->
+    </article>
+    <script>
+
+      function fun() {
+        var name = document.getElementById("name").value;//获取用户输入的姓名文本
+        var memo = document.getElementById("memo").value;//获取用户输入留言文本
+        insertData({ id: name, log: memo });
+        getData();
+      }
+    </script>
+  </main>
+  <footer>
+    <p>本虚拟站点采用 CC0 协议，代码所有内容均可任意修改和复用。</p>
+  </footer>
+</body>
+
+</html>

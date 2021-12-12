@@ -1,0 +1,42 @@
+
+<!--
+ * @Author: @King-ring
+ * @from： https://github.com/King-ring/html5
+ * @Date: 2020-05-10 21:43:00
+ * @LastEditTime: 2021-12-11 21:50:46
+ * @FilePath: \html\assets\index.html
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body onload="init()"><!--body加载完执行init()函数-->
+		<table>
+			<tr>
+				<td>姓名：</td>
+				<td><input type="text" id="name"></td>
+			</tr>
+			<tr>
+				<td>留言：</td>
+				<td><input type="text" id="memo"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="保存" onclick="saveData()"></td>
+			</tr>
+		</table>
+		<hr>
+		<table id="datatable" border="1">
+		</table>
+		<p id="msg"></p>
+	</body>
+	<script type="text/javascript" src="./mySQL.js">
+		
+		
+	</script>
+
+</html>
