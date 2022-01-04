@@ -1,0 +1,172 @@
+<!--
+ * @Date: 2022-01-03 17:12:25
+ * @LastEditors: MannixWu
+ * @LastEditTime: 2022-01-04 14:24:28
+ * @FilePath: \MannixWu.github.io\math.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            *{
+                background-color: #333;
+            }
+            .main {
+                display: flex;
+                flex-direction: row;
+                border: 1px solid;
+                border-color: #333;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+            }
+            .main div {
+                height: 100%;
+                border: 1px solid;
+                border-color: #333;
+                font-size: 300px;
+                color: #fff;
+            }
+            .row{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+            }
+            .row div{
+                height: 100%;
+                border: 1px solid;
+                border-color: #333;
+                font-size: 100px;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div>0</div>
+            <div>+</div>
+            <div>0</div>
+            <div>=</div>
+            <div>0</div>
+        </div>
+        <div class="row">
+            <div>今天做了</div>
+            <div>0</div>
+            <div>道</div>
+        </div>
+        
+        <script>
+            var num1 = document.querySelector(".main div:nth-child(1)");
+            var operator = document.querySelector(".main div:nth-child(2)");
+            var num2 = document.querySelector(".main div:nth-child(3)");
+            var equal = document.querySelector(".main div:nth-child(4)");
+            var result = document.querySelector(".main div:nth-child(5)");
+            var count = document.querySelector(".row div:nth-child(2)");
+            var num1_value = 0;
+            var num2_value = 0;
+            var operator_value = "+";
+            var result_value = 0;
+            var count_value = -1;
+
+            const maxValue = 20;
+            const minValue = 0;
+            reset();
+            
+            //点击body监听
+            document.body.addEventListener("click", function(e){
+                getResult();
+            });
+
+            function getResult() {
+                switch (operator_value) {
+                    case "+":
+                        console.log(num1_value + num2_value);
+                        result_value = num1_value + num2_value;
+                        break;
+                    case "-":
+                        result_value = num1_value - num2_value;
+                        break;
+                    case "*":
+                        result_value = num1_value * num2_value;
+                        break;
+                    case "/":
+                        result_value = num1_value / num2_value;
+                        break;
+                }
+                result.innerHTML = result_value;
+                setTimeout(reset, 1000);
+            }
+            // result.addEventListener("click", function (e) {
+            //     reset();
+            // });
+            function reset() {
+                resetOperator();
+                resetNum();
+                count_value++;
+                count.innerHTML = count_value;
+                operator.innerHTML = operator_value;
+            }
+            function resetNum() {
+                switch (operator_value) {
+                    case "+":
+                        do {
+                            num1_value = random(1, 20);
+                            num2_value = random(1, 20);
+                        } while (!checkResult());
+                        break;
+                    case "-":
+                        do {
+                            num1_value = random(1, 20);
+                            num2_value = random(1, 30);
+                        } while (!checkResult());
+                        break;
+                    case "*":
+                        result_value = num1_value * num2_value;
+                        break;
+                    case "/":
+                        result_value = num1_value / num2_value;
+                        break;
+                }
+                num1.innerHTML = num1_value;
+                num2.innerHTML = num2_value;
+                result.innerHTML = "?";
+            }
+            function resetOperator() {
+                operator_value = ["+", "-", "*", "/"][random(0, 1)];
+            }
+            function random(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            function checkResult() {
+                switch (operator_value) {
+                    case "+":
+                        return (
+                            maxValue >= num1_value + num2_value &&
+                            minValue <= num1_value + num2_value
+                        );
+                        break;
+                    case "-":
+                        return (
+                            maxValue >= num1_value - num2_value &&
+                            minValue <= num1_value - num2_value
+                        );
+                        break;
+                    case "*":
+                        return num1 * num2;
+                        break;
+                    case "/":
+                        return num1 / num2;
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>
