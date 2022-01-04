@@ -1,7 +1,7 @@
 <!--
  * @Date: 2022-01-03 17:12:25
  * @LastEditors: MannixWu
- * @LastEditTime: 2022-01-04 14:42:26
+ * @LastEditTime: 2022-01-04 15:04:25
  * @FilePath: \MannixWu.github.io\math.html
 -->
 <!DOCTYPE html>
@@ -12,64 +12,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <style>
-            *{
+            * {
                 background-color: #333;
             }
             .main {
-                display: flex;
-                flex-direction: row;
-                border: 1px solid;
-                border-color: #333;
-                width: 100%;
-                height: 100%;
-                justify-content: center;
-            }
-            .main div {
-                height: 100%;
-                border: 1px solid;
-                border-color: #333;
-                font-size: 200px;
-                color: #fff;
-            }
-            .row{
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: row;
+                transform: rotate(90deg) translate(50%, 0);
                 justify-content: center;
                 align-items: center;
-
             }
-            .row div{
+            .body{
+                display: flex;
+                flex-direction: row;
+            }
+            .row {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+            }
+            .row div {
                 height: 100%;
                 border: 1px solid;
                 border-color: #333;
                 font-size: 100px;
                 color: #fff;
             }
+            .query {
+                font-size: 100px;
+            }
         </style>
     </head>
     <body>
         <div class="main">
-            <div>0</div>
-            <div>+</div>
-            <div>0</div>
-            <div>=</div>
-            <div>0</div>
+            <div class="row query">
+                <div>0</div>
+                <div>+</div>
+                <div>0</div>
+                <div>=</div>
+                <div>0</div>
+            </div>
+            <div class="row count">
+                <div>今天做了</div>
+                <div>0</div>
+                <div>道</div>
+            </div>
         </div>
-        <div class="row">
-            <div>今天做了</div>
-            <div>0</div>
-            <div>道</div>
-        </div>
-        
+
         <script>
-            var num1 = document.querySelector(".main div:nth-child(1)");
-            var operator = document.querySelector(".main div:nth-child(2)");
-            var num2 = document.querySelector(".main div:nth-child(3)");
-            var equal = document.querySelector(".main div:nth-child(4)");
-            var result = document.querySelector(".main div:nth-child(5)");
-            var count = document.querySelector(".row div:nth-child(2)");
+            var num1 = document.querySelector(".query div:nth-child(1)");
+            var operator = document.querySelector(".query div:nth-child(2)");
+            var num2 = document.querySelector(".query div:nth-child(3)");
+            var equal = document.querySelector(".query div:nth-child(4)");
+            var result = document.querySelector(".query div:nth-child(5)");
+            var count = document.querySelector(".count div:nth-child(2)");
             var num1_value = 0;
             var num2_value = 0;
             var operator_value = "+";
@@ -79,9 +74,9 @@
             const maxValue = 20;
             const minValue = 0;
             reset();
-            
+
             //点击body监听
-            document.body.addEventListener("click", function(e){
+            document.body.addEventListener("click", function (e) {
                 getResult();
             });
 
