@@ -1,0 +1,68 @@
+body{
+    background-color: #818181;
+}
+#calculator{
+    width:300px;
+    height: 410px;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #dfd8d0;
+    border: 2px solid #908b85;
+    border-radius: 20px;
+    box-shadow: 7px 10px 34px 1px rgba(0,0,0,0.68), inset -1px -6px 12px 0.1px #89847e;
+}
+#entrybox{
+    width:80%;
+    height: 65px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #c3c2ab;
+    border-radius: 6px;
+    border: 2px solid #b4b39d;
+}
+.entry{
+    margin-right: 10px;
+    font-size: 18px;
+}
+#buttons{
+    width: 280px;
+    height:auto;
+    margin-left: 15px;
+    margin-top: 15px;
+    display: inline-block;
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+button{
+    width:50px;
+    height:40px;
+    margin:0 4px 10px 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3a3a3a;
+    box-shadow: 0 3px 0 0 #222121, inset -1px -3px 10px 1px #515151;
+}
+button:active{
+    transform: translate(0,3px);
+    box-shadow: none;
+}
+#equal-button{
+    height: 90px;
+    margin-top: -50px;
+    margin-left: 12px;
+    position: absolute;
+}
+#zero-button{
+    width: 117px;
+}
+.red{
+    background-color: #a72d45;
+    box-shadow: 0 3px 0 0 #671c2a;
+}
+#footer{
+    margin-top: 40px;
+    font-size: 16px;
+}
