@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-02-26 10:29:36
  * @LastEditors: MannixWu
- * @LastEditTime: 2022-02-26 12:15:23
+ * @LastEditTime: 2022-03-29 20:08:34
  * @FilePath: \MannixWu.github.io\math\script.js
  */
 
@@ -17,12 +17,14 @@ $(document).ready(function () {
         var reg = /^[0-9]*$/;
         return reg.test(num);
     }
-
+    function randomNum(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
     //生成20以内加减法的计算题目，且结果不大于20且不小于0
     function randomQuestion(max) {
-        var num1 = Math.floor(Math.random() * max);
-        var num2 = Math.floor(Math.random() * max);
-        var sign = Math.floor(Math.random() * 2);
+        var num1 = Math.floor(randomNum(10, 20));
+        var num2 = Math.floor(randomNum(1,20));
+        var sign = Math.floor(1);
         var res = {
             question: "",
             answer: 0,
@@ -34,7 +36,7 @@ $(document).ready(function () {
             res.question = num1 + " - " + num2;
             res.answer = num1 - num2;
         }
-        if (res.answer > max || res.answer < 0) {
+        if (res.answer > 20 || res.answer < 1) {
             res = randomQuestion(max);
         }
         return res;
