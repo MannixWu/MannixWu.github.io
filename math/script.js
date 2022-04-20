@@ -1,16 +1,18 @@
 /*
  * @Date: 2022-02-26 10:29:36
  * @LastEditors: MannixWu
- * @LastEditTime: 2022-03-29 20:08:34
+ * @LastEditTime: 2022-04-20 19:57:39
  * @FilePath: \MannixWu.github.io\math\script.js
  */
 
 // final draft
 $(document).ready(function () {
+    const maxResult = 30;
+    const minResult = 10;
     var entry = "";
     var result = "";
     var count = [0,0];
-    var question = randomQuestion(20);
+    var question = randomQuestion(minResult,maxResult,randomNum(0,1));
     $("#question").html(question.question);
     //判断是否为数字
     function isNumber(num) {
@@ -21,10 +23,9 @@ $(document).ready(function () {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     //生成20以内加减法的计算题目，且结果不大于20且不小于0
-    function randomQuestion(max) {
-        var num1 = Math.floor(randomNum(10, 20));
-        var num2 = Math.floor(randomNum(1,20));
-        var sign = Math.floor(1);
+    function randomQuestion(min,max,sign) {
+        var num1 = randomNum(1, 30);
+        var num2 = randomNum(1,30);
         var res = {
             question: "",
             answer: 0,
@@ -36,8 +37,8 @@ $(document).ready(function () {
             res.question = num1 + " - " + num2;
             res.answer = num1 - num2;
         }
-        if (res.answer > 20 || res.answer < 1) {
-            res = randomQuestion(max);
+        if (res.answer > max || res.answer < min) {
+            res = randomQuestion(min,max,sign);
         }
         return res;
     }
@@ -51,7 +52,7 @@ $(document).ready(function () {
                 $("#answer").html("回答正确");
                 count[0]++;
 
-                question = randomQuestion(20);
+                question = randomQuestion( minResult,maxResult,randomNum(0,1));
                 $("#question").html(question.question);
             } else {
                 count[1]++;
