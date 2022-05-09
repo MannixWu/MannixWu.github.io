@@ -1,13 +1,13 @@
 /*
  * @Date: 2022-02-26 10:29:36
  * @LastEditors: MannixWu
- * @LastEditTime: 2022-04-20 19:57:39
+ * @LastEditTime: 2022-05-09 18:50:29
  * @FilePath: \MannixWu.github.io\math\script.js
  */
 
 // final draft
 $(document).ready(function () {
-    const maxResult = 30;
+    const maxResult = 40;
     const minResult = 10;
     var entry = "";
     var result = "";
@@ -24,8 +24,8 @@ $(document).ready(function () {
     }
     //生成20以内加减法的计算题目，且结果不大于20且不小于0
     function randomQuestion(min,max,sign) {
-        var num1 = randomNum(1, 30);
-        var num2 = randomNum(1,30);
+        var num1 = randomNum(min, max);
+        var num2 = randomNum(min,max);
         var res = {
             question: "",
             answer: 0,
